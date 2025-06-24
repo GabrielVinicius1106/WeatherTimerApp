@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Timer App</title>
+
+    <link rel="shortcut icon" href="assets/icons/cloud-solid.svg" type="image/x-icon">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100..700&family=Roboto:wdth,wght@90,100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+<body>
+
+    <main class="header padding-inline">
+        <div class="weather-text">
+            <span id="hour"></span>
+            <img src="" alt="Ícone do Clima" id="weather-icon" class="weather-icon">
+        </div>
+        <span id="city" class="padding-inline"></span>
+    </main>
+
+    <section class="body padding-inline">
+        <div class="set-timer">
+            <h2>Set timer</h2>
+            <div class="input">
+                <input type="text" id="input-timer" placeholder="in minutes">
+            </div>
+            <div class="buttons">
+                <div class="button">
+                    <input type="button" value="START" id="start">
+                </div>
+
+                <div class="button">
+                    <input type="button" value="PAUSE" id="pause">
+                </div>
+
+                <div class="button">
+                    <input type="button" value="RESET" id="reset">
+                </div>
+            </div>
+        </div>
+        <div class="timer" id="timer">
+            <span>00:00:00</span>
+        </div>
+    </section>
+    
+
+    <script src="scripts/timer.js"></script>
+    <script src="scripts/weather.js"></script>
+</body>
+</html>

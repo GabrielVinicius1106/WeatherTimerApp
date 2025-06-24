@@ -1,0 +1,67 @@
+.body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 22.5rem;
+    height: 22rem;
+
+    border-radius: 1rem;
+
+
+    background-color: var(--card-background);
+
+    & .set-timer {
+        padding-top: 1.25rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+
+        font: var(--input);
+        color: var(--text-primary);
+
+        & .buttons {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+    }
+
+    & .timer {
+        padding-block: 1rem;
+
+        font: var(--timer);
+        font-size: 4rem;
+
+        color: var(--text-primary);
+    }
+}
+
+@media (width >= 64em) {
+
+    .body {
+        width: 48rem;
+        height: 24rem;
+    
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+
+        & .timer {
+            font-size: 5rem;
+        }
+    }
+}
+
+@media (width >= 80em) {
+
+    .body {
+        width: 64rem;
+
+        & .set-timer {
+            font-size: 2.5rem;
+        }
+    }
+
+}

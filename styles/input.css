@@ -1,0 +1,28 @@
+.input {
+    width: 100%;
+
+    & input[type="text"] {
+        text-align: center;
+        outline: none;
+
+        height: 3rem;
+        width: 100%;
+        border-radius: .5rem;
+        border: 2px solid var(--primary-blue-dark);
+
+        padding-left: .5rem;
+
+        background-color: var(--card-background);
+
+        font: var(--timer);
+        color: var(--text-primary);
+
+        transition: border-color 250ms ease-in-out;
+
+        &:hover, &:focus {
+            border-color: var(--text-secondary);
+            cursor: pointer;
+        }
+
+    }
+}
