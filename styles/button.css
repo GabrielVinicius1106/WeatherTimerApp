@@ -1,11 +1,10 @@
 .button {
-    
     display: flex;
     justify-content: center;
 
     & input[type="button"] {
-        height: 3rem;
-        width: 6rem;
+        height: 2rem;
+        width: 4rem;
 
         border: none;
         border-radius: .5rem;
@@ -14,14 +13,45 @@
         color: var(--button-text-color);
 
         font: var(--button);
+        font-size: 1rem;
 
         transition: background-color 250ms ease-in-out;
 
         &:hover {
             background-color: var(--text-secondary);
-            font-size: 1.55rem;
+            font-size: 1.1rem;
             cursor: pointer;
         }
     }
 
+}
+
+@media (width >= 64em){
+    .button {
+        display: flex;
+        justify-content: center;
+
+        & input[type="button"] {
+            height: 3rem;
+            width: 6rem;
+
+            border: none;
+            border-radius: .5rem;
+
+            background-color: var(--primary-blue-dark);
+            color: var(--button-text-color);
+
+            font: var(--button);
+            font-size: 1.5rem;
+
+            transition: background-color 250ms ease-in-out;
+
+            &:hover {
+                background-color: var(--text-secondary);
+                font-size: 1.75rem;
+                cursor: pointer;
+            }
+        }
+
+    }
 }
