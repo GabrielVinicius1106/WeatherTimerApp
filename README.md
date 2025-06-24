@@ -35,7 +35,7 @@ git clone https://github.com/GabrielVinicius1106/WeatherTimerApp/
 2. Abra seu repositório e o arquivo **index.html**
 
 ```bash
-cd /WeatherTimerApp
+cd ./WeatherTimerApp
 ```
 
 ---
