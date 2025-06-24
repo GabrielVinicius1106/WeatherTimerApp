@@ -1,7 +1,8 @@
-
 const weatherIcon = document.querySelector("#weather-icon")
 const hourDisplay = document.querySelector("#hour")
 const cityDisplay = document.querySelector("#city")
+const weatherText = document.querySelector(".weather-text") 
+const load = document.querySelector(".load")
 
 // Acessar API de clima e inserir na aplicação
 const API_KEY = "4533dc1e6ea94ac0b4d211614252306" 
@@ -34,6 +35,10 @@ const GET_GEOLOCATION = navigator.geolocation.getCurrentPosition((position) => {
         weatherIcon.src = icon
         hourDisplay.innerText = `${temperature}°C`
         cityDisplay.innerText = city
+
+        weatherText.style.display = "flex"
+        cityDisplay.style.display = "block"
+        load.style.display = "none"
 
     })
 })
