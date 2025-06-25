@@ -5,7 +5,7 @@ const resetButton = document.querySelector("#reset")
 
 const timer = document.querySelector("#timer")
 
-let counter = false
+let counter = 0
 
 let hours = 0
 let minutes = 0
@@ -19,11 +19,13 @@ inputTimer.addEventListener("input", () => {
 
 startButton.addEventListener("click", () => {
     
-    // Pega o valor do tempo em minutos
-    minutes = Number(inputTimer.value)
-
+    
     // Encerra qualquer timer iniciado anteriormente
     if (pauseTimer == false && minutes !== 0){
+        
+        // Pega o valor do tempo em minutos
+        minutes = Number(inputTimer.value)
+        
         clearInterval(counter)
         
         // Torna o input vazio
