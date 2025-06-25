@@ -20,6 +20,8 @@ inputTimer.addEventListener("input", () => {
 startButton.addEventListener("click", () => {
     
     
+    // [] Arrumar bug de pause e start
+
     // Encerra qualquer timer iniciado anteriormente
     if (pauseTimer == false && minutes !== 0){
         
