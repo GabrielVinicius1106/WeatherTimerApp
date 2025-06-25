@@ -18,67 +18,66 @@ inputTimer.addEventListener("input", () => {
 })
 
 startButton.addEventListener("click", () => {
-
-    // Encerra qualquer timer iniciado anteriormente
-    clearInterval(counter)
-
+    
     // Pega o valor do tempo em minutos
     minutes = Number(inputTimer.value)
 
-    if (minutes === 0){
+    // Encerra qualquer timer iniciado anteriormente
+    if (pauseTimer == false && minutes !== 0){
+        clearInterval(counter)
+        
+        // Torna o input vazio
+        inputTimer.value = ""
+
+        // Inicia a variável de horas e segundos
+        while (minutes >= 60){
+            hours++
+            minutes = minutes - 60
+        }
+
+        seconds = 0
+
+        console.log(`${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`);
+
+        
+        // Exibe no visor o timer correndo
+        timer.innerText = `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`
+
+        // Cria o timer partindo do valor inserido
+        counter = setInterval(() => {
+            
+            if ((hours <= 0 && minutes <= 0 && seconds <= 0) || pauseTimer === true){
+                clearInterval(counter)
+                if (hours === 0 && minutes === 0 && seconds === 0){
+                    alert("Cronômetro encerrado!")
+                }
+            } else {
+            
+                if (minutes === 0 && seconds === 0 && hours > 0){
+                    hours--
+                    minutes = 59
+                    seconds = 60
+                }
+
+                if (hours >= 0 && minutes > 0 && seconds === 0){
+                    minutes--
+                    seconds = 60
+                }
+
+                // Decrementando o timer!
+                seconds--
+                
+                timer.innerText = `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`
+        
+            }   
+
+
+        }, 1000)
+    } else {
         return
     }
-    
-    // Torna o input vazio
-    inputTimer.value = ""
-
-    // Inicia a variável de controle de pause
-    pauseTimer = false
-
-    // Inicia a variável de horas e segundos
-    while (minutes >= 60){
-        hours++
-        minutes = minutes - 60
-    }
-
-    seconds = 0
-
-    console.log(`${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`);
 
     
-    // Exibe no visor o timer correndo
-    timer.innerText = `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`
-
-    // Cria o timer partindo do valor inserido
-    counter = setInterval(() => {
-        
-        if ((hours <= 0 && minutes <= 0 && seconds <= 0) || pauseTimer === true){
-            clearInterval(counter)
-            if (hours === 0 && minutes === 0 && seconds === 0){
-                alert("Cronômetro encerrado!")
-            }
-        } else {
-        
-            if (minutes === 0 && seconds === 0 && hours > 0){
-                hours--
-                minutes = 59
-                seconds = 60
-            }
-
-            if (hours >= 0 && minutes > 0 && seconds === 0){
-                minutes--
-                seconds = 60
-            }
-
-            // Decrementando o timer!
-            seconds--
-            
-            timer.innerText = `${hours.toString().padStart(2,"0")}:${minutes.toString().padStart(2,"0")}:${seconds.toString().padStart(2,"0")}`
-    
-        }   
-
-
-    }, 1000)
     
 })
 
