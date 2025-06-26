@@ -19,16 +19,16 @@ inputTimer.addEventListener("input", () => {
 
 startButton.addEventListener("click", () => {
     
-    
-    // [] Arrumar bug de pause e start
+    console.log(inputTimer.value);
 
-    // Encerra qualquer timer iniciado anteriormente
-    if (pauseTimer == false && minutes !== 0){
+    if (inputTimer.value != ""){
+        
+        pauseTimer = false
+
+        clearInterval(counter)
         
         // Pega o valor do tempo em minutos
         minutes = Number(inputTimer.value)
-        
-        clearInterval(counter)
         
         // Torna o input vazio
         inputTimer.value = ""
@@ -89,6 +89,8 @@ pauseButton.addEventListener("click", () => {
 
     pauseTimer = !pauseTimer
 
+    console.log(pauseTimer);
+
     if (pauseTimer === true || (hours === 0 && minutes === 0 && seconds === 0)){
         clearInterval(counter)
     } else {
@@ -111,7 +113,6 @@ pauseButton.addEventListener("click", () => {
                         minutes--
                         seconds = 60
                     }
-
                     
                     seconds--
                     
@@ -129,7 +130,7 @@ resetButton.addEventListener("click", () => {
 
     clearInterval(counter)
 
-    pauseTimer = true
+    pauseTimer = false
 
     hours = 0
     minutes = 0
