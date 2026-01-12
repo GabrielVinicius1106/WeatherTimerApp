@@ -1,5 +1,5 @@
 const weatherIcon = document.querySelector("#weather-icon")
-const hourDisplay = document.querySelector("#hour")
+const temperatureDisplay = document.querySelector("#hour")
 const cityDisplay = document.querySelector("#city")
 const weatherText = document.querySelector(".weather-text") 
 const load = document.querySelector(".load")
@@ -33,7 +33,7 @@ const GET_GEOLOCATION = navigator.geolocation.getCurrentPosition((position) => {
         let city = data.location.name
 
         weatherIcon.src = icon
-        hourDisplay.innerText = `${temperature}°C`
+        temperatureDisplay.innerText = `${temperature}°C`
         cityDisplay.innerText = city
 
         weatherText.style.display = "flex"
